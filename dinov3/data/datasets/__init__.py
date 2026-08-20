@@ -10,3 +10,4 @@ from .hpa_whole_hr import HPAWholeHR
 from .image_net import ImageNet
 from .image_net_22k import ImageNet22k
 from .nyu import NYU
+from .my_dataset import AICSDataset

@@ -10,7 +10,7 @@ from typing import Any, Callable, List, Optional, TypeVar
 import torch
 from torch.utils.data import Sampler
 
-from .datasets import ADE20K, CocoCaptions, FMoW, HPAWholeHR, ImageNet, ImageNet22k, NYU
+from .datasets import ADE20K, CocoCaptions, FMoW, HPAWholeHR, ImageNet, ImageNet22k, NYU, AICSDataset
 from .samplers import EpochSampler, InfiniteSampler, ShardedInfiniteSampler
 
 logger = logging.getLogger("dinov3")
@@ -88,6 +88,11 @@ def _parse_dataset_str(dataset_str: str):
             kwargs["split"] = _Split[kwargs["split"]]
         if "with_metadata" in kwargs:
             kwargs["with_metadata"] = kwargs["with_metadata"].lower() in ("true", "1", "yes")
+    ######## my code #########
+    elif name == "AICS":
+        class_ = AICSDataset
+        if "split" in kwargs:
+            kwargs["split"] = AICSDataset.Split[kwargs["split"]]
     else:
         raise ValueError(f'Unsupported dataset "{name}"')
 

@@ -41,7 +41,7 @@ def _load_file_names_and_labels_ssl(root: str):
         for row in csv.DictReader(f):
             image_relpath = row.get("save_reg_path", "")
             if image_relpath:
-                image_paths.append(image_relpath)
+                image_paths.append(os.path.join(root,image_relpath))
             struct_displayname = row.get("StructureDisplayName", "")
             if struct_displayname:
                 struct_ids.append(_struct_to_ids.get(struct_displayname, ""))

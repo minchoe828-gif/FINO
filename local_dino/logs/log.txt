@@ -1,0 +1,3 @@
+I20260819 04:24:25 503632 dinov3 torch_distributed_wrapper.py:255] PyTorch distributed environment: TorchElastic job (none) using 127.0.0.1:29500 (rank=0, world size=1)
+I20260819 04:42:40 506695 dinov3 torch_distributed_wrapper.py:255] PyTorch distributed environment: TorchElastic job (none) using 127.0.0.1:29501 (rank=0, world size=1)
+I20260819 05:08:48 508729 dinov3 torch_distributed_wrapper.py:255] PyTorch distributed environment: TorchElastic job (none) using 127.0.0.1:29502 (rank=0, world size=1)
